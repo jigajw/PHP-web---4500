@@ -1,5 +1,6 @@
     <header class="header">
-           <?php #Topo ?>
+           <?php include_once 'template/topo.php'
+            ?>
     </header>
     <?php
         $banners = array(
@@ -45,8 +46,8 @@
                   <div class="container">
                     <div class="row">
                         <div class="span12">
-                            <h2><?php #Nome do Banner ?></h2>
-                            <p><?php #Descriçao ?></p>
+                            <h2><?php  #Nome do Banner ?></h2>
+                            <p><?php include_once 'template/descricao.php'#Descriçao ?></p>
                         </div>
                     </div>
                   </div>
@@ -65,11 +66,11 @@
     </section>
 
     <section class="vantagens">
-        <?php #Vantagens ?>
+        <?php include_once 'template/vantagens.php'#Vantagens ?>
     </section>
 
     <section class="funcionalidades">
-        <?php #Funcionalidades ?>
+        <?php include_once 'template/funcionalidades.php' #Funcionalidades ?>
     </section>
 
     <section class="cadastro">
@@ -83,7 +84,7 @@
     </section>
 
     <footer class="footer">
-        <?php #Rodapé ?>
+        <?php include_once 'template/rodape.php' #Rodapé ?>
     </footer>
 
 </body>
