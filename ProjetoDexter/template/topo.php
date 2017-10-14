@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html dir="ltr" lang="pt-BR">
 <head>
@@ -28,7 +29,23 @@
                    $paginas[] = array('url' => 'cadastro.php', 'label' => 'Cadastre-se');
                    $paginas[] = array('url' => 'contato.php', 'label' => 'Contato');
                ?>
-	           <?php echo 'Exercícios'; ?>
+	           <?php 
+
+
+             foreach ($paginas as $pagina) {
+               # code...
+
+
+             echo '<li>  <a href = "'. $pagina['url'] .  ' ">'. $pagina['label'] .'</a>  </li>';
+
+             // <li> <a href= "$pagina ['url']" > $pagina ['label']</a> </li>
+             }
+
+
+
+
+
+             ?>
 		</ul>
 	</nav>
 </div>
