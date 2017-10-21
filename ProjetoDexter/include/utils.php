@@ -14,6 +14,24 @@ function verificaPagina($pagina){
 	}
 }
 
+function ValidaCampo ($_campo){
+
+if ($_campo == '') {
+
+	return false;
+	
+	# code...
+}
+return true;
+}
+
+if (isset($_POST['nome'])) {
+	echo $_POST['nome'];
+	# code...
+}else {
+	echo " ";
+}
+
 
 
 

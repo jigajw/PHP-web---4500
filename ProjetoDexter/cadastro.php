@@ -14,7 +14,9 @@
 <body>
 	<header class="header">
         <?php include_once 'template/topo.php'
-            ?>
+
+        ?>  
+
     </header>
 
 	<div class="container content">
@@ -27,37 +29,76 @@
 		</div>
 
 		<form action="#" method="post" class="form">
+
+		<?php
+		
+
+		if ($_POST) {		
+
+		$ok = true;
+
+		$invalidos = [];
+		if (!ValidaCampo($_POST['nome'])) {
+			$invalidos[] = 'Campo nome é Obrigatorio';
+			$ok = false;
+
+		}	if (!ValidaCampo($_POST['email'])) {
+			$invalidos[] = 'Campo email é Obrigatorio';
+			$ok = false;	
+		}
+
+
+			//erro ao enviar
+			if (!$ok){
+				echo '<div class="alert alert-danger" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+				&times;
+				</button>';
+				foreach ($invalidos as $msg) {
+					echo $msg . '<br>';
+				}
+				echo '</div>';
+			} else {
+				echo '<div class="alert alert-success" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+				&times;
+				</button>
+				Enviado</div>';
+			}
+		}
+
+		?>
 			<p>
 				<label for="nome">Nome/Razao</label> <input type="text" name="nome"
-					id="nome_razao" required>
+					id="nome_razao" >
 			</p>
 			<p>
 				<label for="email">Email</label> <input type="email" name="email"
-					id="email" required>
+					id="email" >
 			</p>
 			<p>
 				<label for="tel">Telefone</label> <input type="tel" name="telefone"
-					id="telefone" required>
+					id="telefone" >
 			</p>
 			<p>
 				<label for="cel">Celular</label> <input type="tel" name="celular"
-					id="celular"  required>
+					id="celular"  >
 			</p>
 			<p>
 				<label for="cep">Cep</label> <input type="tel" name="cep" id="tel"
-					 required>
+					 >
 			</p>
 			<p>
 				<label for="endereco">Endereço</label> <input type="tel"
-					name="telefone" id="bai" required>
+					name="telefone" id="bai" >
 			</p>
 			<p>
 				<label for="bairro">Bairro</label> <input type="tel" name="bairro"
-					id="tel" required>
+					id="tel" >
 			</p>
 			<p>
 				<label for="cidade">Cidade</label> <input type="tel" name="cidade"
-					id="cidade" required>
+					id="cidade" >
 			</p>
 			<p>
 				<label for="Estado">Estado</label>
